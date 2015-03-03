@@ -4,9 +4,6 @@
     min-width: 600px;
     height: 150px;
     background-color: #ADD6FF;
-
-
-
     margin: auto;
 }
 
@@ -111,6 +108,9 @@ body {
     height: 100px;
     position:absolute;
     left: 0;
+    right: 0;
+    top:0;
+    float:left;
 }
 
 .settingsButton {

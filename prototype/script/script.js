@@ -1,3 +1,13 @@
+var counter = 10;
+
+function position() {
+    $(this).css({
+        position: 'absolute',
+        top: '0px',
+        left: '0px'
+    });
+}
+
 function table(picture) {
     container = jQuery('<div/>', {}).addClass("container").draggable({
         containment: "parent",
@@ -20,6 +30,10 @@ function table(picture) {
     container.css('background-repeat', 'no-repeat');
     return container;
 };
+
+function createBox(height, width) {
+
+}
 
 function settingsButton() {
     var button = jQuery('<img src="images/settings.jpg">', {}).addClass("settingsButton");
@@ -63,14 +77,17 @@ $(document).ready(function() {
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Graph.jpg").append(settingsButton()).resizable({
+        $("#frame").append(table("images/Graph.jpg").zIndex(counter).append(settingsButton()).resizable({
             containment: "#frame",
             grid: 20
         }));
+        counter = counter+1;
     })
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Table.jpg").append(settingsButton()));
+        $("#frame").append(table("images/Table.jpg").zIndex(counter).append(settingsButton()));
+        counter = counter+1;
     })
 });
+
