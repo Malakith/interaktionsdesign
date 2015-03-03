@@ -45,6 +45,12 @@ $(document).ready(function() {
             $("#toolbox").toggle(200);
         }
     );
+    //Email button
+    $("#showEmailInput").click(function() {
+            $("#mailInput").toggle(200);
+        }
+    );
+
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
