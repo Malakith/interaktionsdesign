@@ -18,7 +18,7 @@ function table() {
 };
 
 function settingsButton() {
-    var button = jQuery('<div/>', {}).addClass("settingsButton");
+    var button = jQuery('<img src="images/settings.jpg">', {}).addClass("settingsButton");
 
     button.click(function(){
         $(this).closest(".container").append(options());
@@ -28,7 +28,7 @@ function settingsButton() {
 
 function options() {
     var options = jQuery('<div/>', {}).addClass("options");
-    var closeButton = jQuery('<div/>', {}).addClass("closeButton");
+    var closeButton = jQuery('<img src="images/Close.jpg"/>', {}).addClass("closeButton");
     var container = $(this).closest(".container");
     $(this).height(container.height());
     $(this).width(container.width());
