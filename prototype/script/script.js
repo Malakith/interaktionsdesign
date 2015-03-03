@@ -1,12 +1,14 @@
 var counter = 10;
 
-invisible = function() {
-    return this.css('visibility', 'hidden');
-};
 
-function table(picture) {
-    var draggable = jQuery('<div/>', {}).addClass("container").draggable({
-        containment: "parent",
+function widget(picture) {
+    var outer = jQuery('<div></div>').append(createDraggable().append(createResizeable(picture))).addClass("container");
+    return outer;
+}
+
+function createDraggable() {
+    var draggable = jQuery('<div></div>', {}).addClass("draggable").draggable({
+        containment: "#frame",
         drag: function( event, ui ) {
             var snapTolerance = $(this).draggable('option', 'snapTolerance');
             var topRemainder = ui.position.top % 20;
@@ -21,7 +23,11 @@ function table(picture) {
             }
         }
     });
-    var resizeable =  jQuery('<div/>');
+    return draggable;
+}
+
+function createResizeable(picture) {
+    var resizeable = jQuery('<div></div>').addClass("resizeable");
     resizeable.css('background-image', 'url(' + picture + ')');
     resizeable.css('background-size', '100% 100%');
     resizeable.css('background-repeat', 'no-repeat');
@@ -30,36 +36,31 @@ function table(picture) {
         containment: "#frame",
         grid: 20
     });
-    draggable.append(resizeable);
-    var outer = jQuery('<div/>').append(draggable);
-    return outer;
-};
-
-
-
+    return resizeable;
+}
 
 function settingsButton() {
-    var button = jQuery('<img src="images/settings.jpg">', {}).addClass("settingsButton");
+    var button = jQuery('<img src="images/Settings.jpg">', {}).addClass("settingsButton");
 
     button.click(function(){
-        $(this).closest(".container").append(options());
+        $(this).closest(".resizeable").append(options());
     });
     return button;
-};
+}
 
 function options() {
-    var options = jQuery('<div/>', {}).addClass("options");
+    var options = jQuery('<div></div>', {}).addClass("options");
     var closeButton = jQuery('<img src="images/Close.jpg"/>', {}).addClass("closeButton");
     var container = $(this).closest(".container");
     $(this).height(container.height());
     $(this).width(container.width());
     closeButton.click(function(){
-        $(this).closest(".container").css('visibility', 'hidden');
+        $(this).closest(".draggable").hide(200);
 
     });
     options.append(closeButton);
     return options;
-};
+}
 
 $(document).ready(function() {
     //Form code:
@@ -80,31 +81,29 @@ $(document).ready(function() {
 
     //First insert
     $("#insert1").click(function(){
+        alert("test");
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Graph.jpg"));
+        $("#frame").append(widget("images/Graph.jpg"));
         counter = counter+1;
-    })
+    });
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Table.jpg"));
-    })
+        $("#frame").append(widget("images/Table.jpg"));
+    });
 
        //Third insert
     $("#insert3").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Text.jpg"));
+        $("#frame").append(widget("images/Text.jpg"));
 
-    })
+    });
 
            //4'th insert
     $("#insert4").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/List.jpg").append(settingsButton()).resizable({
-            containment: "#frame",
-            grid: 20
-        }));
+        $("#frame").append(widget("images/List.jpg"));
 
-    })
+    });
 });
 
