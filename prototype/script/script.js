@@ -1,15 +1,11 @@
 var counter = 10;
 
-function position() {
-    $(this).css({
-        position: 'absolute',
-        top: '0px',
-        left: '0px'
-    });
-}
+invisible = function() {
+    return this.css('visibility', 'hidden');
+};
 
 function table(picture) {
-    container = jQuery('<div/>', {}).addClass("container").draggable({
+    var draggable = jQuery('<div/>', {}).addClass("container").draggable({
         containment: "parent",
         drag: function( event, ui ) {
             var snapTolerance = $(this).draggable('option', 'snapTolerance');
@@ -25,15 +21,22 @@ function table(picture) {
             }
         }
     });
-    container.css('background-image', 'url(' + picture + ')');
-    container.css('background-size', '100% 100%');
-    container.css('background-repeat', 'no-repeat');
-    return container;
+    var resizeable =  jQuery('<div/>');
+    resizeable.css('background-image', 'url(' + picture + ')');
+    resizeable.css('background-size', '100% 100%');
+    resizeable.css('background-repeat', 'no-repeat');
+    resizeable.append(settingsButton());
+    resizeable.resizable({
+        containment: "#frame",
+        grid: 20
+    });
+    draggable.append(resizeable);
+    var outer = jQuery('<div/>').append(draggable);
+    return outer;
 };
 
-function createBox(height, width) {
 
-}
+
 
 function settingsButton() {
     var button = jQuery('<img src="images/settings.jpg">', {}).addClass("settingsButton");
@@ -51,7 +54,8 @@ function options() {
     $(this).height(container.height());
     $(this).width(container.width());
     closeButton.click(function(){
-        $(this).closest(".container").fadeOut(200, function() { $(this).remove(); });
+        $(this).closest(".container").css('visibility', 'hidden');
+
     });
     options.append(closeButton);
     return options;
@@ -77,28 +81,19 @@ $(document).ready(function() {
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Graph.jpg").zIndex(counter).append(settingsButton()).resizable({
-            containment: "#frame",
-            grid: 20
-        }));
+        $("#frame").append(table("images/Graph.jpg"));
         counter = counter+1;
     })
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Table.jpg").append(settingsButton()).resizable({
-            containment: "#frame",
-            grid: 20
-        }));
+        $("#frame").append(table("images/Table.jpg"));
     })
 
        //Third insert
     $("#insert3").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Text.jpg").append(settingsButton()).resizable({
-            containment: "#frame",
-            grid: 20
-        }));
+        $("#frame").append(table("images/Text.jpg"));
 
     })
 });
