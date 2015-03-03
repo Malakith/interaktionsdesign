@@ -43,7 +43,10 @@ $(document).ready(function() {
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table().append(settingsButton()));
+        $("#frame").append(table().append(settingsButton()).resizable({
+            containment: "#frame",
+            grid: 20
+        }));
     })
     //Second insert
     $("#insert2").click(function(){
