@@ -21,29 +21,31 @@
 <div id="header"><img src="images/generic-logo.png" alt="Mountain View"></div>
 <div id="menu">
     <ul>
-        <li><a href="#" id="showToolbox">Værktøjskasse</a></li>
-        <li><a href="#" id="showEmailInput">Emailopsætning</a></li>
-        <li><a href="#" id="showHelp">Hjælp</a></li>
+        <li class="hover"><a href="#" id="showToolbox">Værktøjskasse</a></li>
+        <li class="hover"><a href="#" id="showEmailInput">Emailopsætning</a></li>
+        <li class="hover"><a href="#" id="showHelp">Hjælp</a></li>
+        <li><span id="spacer"></span></li>
+        <li><img src="images/warning.png" id="icon" class="icon" /></li>
+        <li><span id="registredEmail" class="warning">Email endnu ikke opsat.</span></li>
     </ul>
 </div>
-<div id="toolbox" class="initiallyHidden">
-    <ul>
-        <li><a href="#" id="insert1">Graph</a></li>
-        <li><a href="#" id="insert2">Table</a></li>
-        <li><a href="#" id="insert3">Text</a></li>
-    </ul>
+<div id="submenu">
+    <div id="toolbox" class="initiallyHidden toolbox">
+        <ul>
+            <li class="hover"><a href="#" id="insert1">Graf</a></li>
+            <li class="hover"><a href="#" id="insert2">Tabel</a></li>
+            <li class="hover"><a href="#" id="insert3">Text</a></li>
+        </ul>
+    </div>
+    <div id="emailSetup" class="initiallyHidden toolbox">
+        <ul>
+            <li><a href="#" id="emailChange"><form><input type="text" name="fname" id="emailInput"></form></a></li>
+            <li class="hover"><a href="#" id="applyEmailChange">Gem email</a></li>
+        </ul>
+    </div>
 </div>
 <div id="frame"></div>
-<div id="mailInput" class="initiallyHidden">
-    <form id="form">
-        Input your email here: <input type="text" name="Email"><br>
-        How often to recieve the report: <select>
-            <option value="w">Weekly
-            <option value="m">Monthly
-        </select><br>
-        <input type="submit" value="Submit">
-    </form>
-</div>
+
 <div id="helper" class="initiallyHidden">This is the helper</div>
 
 

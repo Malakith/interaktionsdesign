@@ -11,6 +11,15 @@
     float: left;
 }
 
+#submenu {
+    height:auto;
+    width: 80%;
+    max-width: 900px;
+    min-width: 600px;
+    background-color: white;
+    margin: auto;
+}
+
 #menu div {
     float:right;
 }
@@ -42,6 +51,9 @@
     height:5px;
 }
 
+#spacer {
+    width: auto;
+}
 
 #frame {
     width: 80%;

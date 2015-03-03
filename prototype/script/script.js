@@ -1,4 +1,8 @@
- function widget(picture) {
+var active;
+
+var email;
+
+function widget(picture) {
     var outer = jQuery('<div></div>').append(createDraggable().append(createResizeable(picture))).addClass("container");
     return outer;
 }
@@ -60,11 +64,7 @@ function options() {
 }
 
 $(document).ready(function() {
-    //Form code:
-    $("#form").submit(function (e) {
-        e.preventDefault();
-        $("#mailInput").toggle(200);
-    });
+
     //Toolbox button
     $("#showToolbox").click(function() {
             $("#toolbox").slideToggle(200);
@@ -72,9 +72,17 @@ $(document).ready(function() {
     );
     //Email button
     $("#showEmailInput").click(function() {
-            $("#mailInput").toggle(200);
+            $("#emailSetup").slideToggle(200);
         }
     );
+
+    //Save email
+    $("#applyEmailChange").click(function() {
+        email = $("#emailInput").val();
+        $("#icon").attr("src", "images/snabela.png");
+        $("#registredEmail").html(email).removeClass("warning");
+        $("#emailOutput").text("Din mail er blevet gemt.");
+    });
 
     //First insert
     $("#insert1").click(function(){
