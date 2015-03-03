@@ -16,7 +16,7 @@ function table(picture) {
         }
     });
     container.css('background-image', 'url(' + picture + ')');
-    container.css('background-size', '100%', '100%');
+    container.css('background-size', '100% 100%');
     container.css('background-repeat', 'no-repeat');
     return container;
 };
