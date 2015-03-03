@@ -1,7 +1,4 @@
-var counter = 10;
-
-
-function widget(picture) {
+ function widget(picture) {
     var outer = jQuery('<div></div>').append(createDraggable().append(createResizeable(picture))).addClass("container");
     return outer;
 }
@@ -81,10 +78,9 @@ $(document).ready(function() {
 
     //First insert
     $("#insert1").click(function(){
-        alert("test");
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/Graph.jpg"));
-        counter = counter+1;
+
     });
     //Second insert
     $("#insert2").click(function(){

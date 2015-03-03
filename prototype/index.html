@@ -11,13 +11,20 @@
     <script src="jquery-ui.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style/menu.css" media="all" />
 
     <script type="text/javascript" src="script/script.js"></script>
 </head>
 
 <body>
 <div id="header"><img src="images/generic-logo.png" alt="Mountain View"></div>
-<div id="menu"><div id="showToolbox" class="left">Show Toolbox</div><div id="showEmailInput" class="left">Input Email</div></div>
+<div id="menu">
+    <ul>
+        <li><a href="#" id="showToolbox">Værktøjskasse</a></li>
+        <li><a href="#" id="showEmailInput">Emailopsætning</a></li>
+        <li><a href="#" id="showHelp">Hjælp</a></li>
+    </ul>
+</div>
 <div id="frame"></div>
 <div id="mailInput" class="initiallyHidden">
     <form id="form">
