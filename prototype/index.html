@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="style/style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="style/menu.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style/toolbox.css" media="all" />
 
     <script type="text/javascript" src="script/script.js"></script>
 </head>
@@ -25,25 +26,26 @@
         <li><a href="#" id="showHelp">Hjælp</a></li>
     </ul>
 </div>
+<div id="toolbox" class="initiallyHidden">
+    <ul>
+        <li><a href="#" id="insert1">Graph</a></li>
+        <li><a href="#" id="insert2">Table</a></li>
+        <li><a href="#" id="insert3">Text</a></li>
+    </ul>
+</div>
 <div id="frame"></div>
 <div id="mailInput" class="initiallyHidden">
     <form id="form">
-    Input your email here: <input type="text" name="Email"><br>
-    How often to recieve the report: <select>
-        <option value="w">Weekly
-        <option value="m">Monthly
-    </select><br>
-    <input type="submit" value="Submit">
-</form>
+        Input your email here: <input type="text" name="Email"><br>
+        How often to recieve the report: <select>
+            <option value="w">Weekly
+            <option value="m">Monthly
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
-<div id="toolbox" class="initiallyHidden">
-    <div class="title">Toolbox</div>
-    <div id="insert1" class="insert">Graph</div>
-    <div id="insert2" class="insert">Table</div>
-    <div id="insert3"class="insert">Text</div>
-    <div id="insert4"class="insert">insert4</div>
-    <div id="insert5"class="insert">insert5</div>
-</div>
+<div id="helper" class="initiallyHidden">This is the helper</div>
+
 
 
 </body>

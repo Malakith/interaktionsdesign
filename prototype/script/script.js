@@ -67,7 +67,7 @@ $(document).ready(function() {
     });
     //Toolbox button
     $("#showToolbox").click(function() {
-            $("#toolbox").toggle(200);
+            $("#toolbox").slideToggle(200);
         }
     );
     //Email button

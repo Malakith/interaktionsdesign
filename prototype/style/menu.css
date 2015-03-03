@@ -10,12 +10,15 @@
   border: 0;
   line-height: 1;
   font-family: 'Lato', sans-serif;
+
 }
 #menu {
   width: 80%;
   max-width: 900px;
   min-width: 600px;
   margin: auto;
+    position: relative;
+    z-index: 10;
 }
 #menu ul {
   zoom: 1;
