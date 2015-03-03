@@ -118,3 +118,7 @@ body {
     height: 20px;
     background-color: #34b82b;
 }
+
+.initiallyHidden {
+    display: none;
+}

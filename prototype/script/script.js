@@ -40,6 +40,11 @@ function options() {
 };
 
 $(document).ready(function() {
+    //Toolbox button
+    $("#showToolbox").click(function() {
+            $("#toolbox").toggle(200);
+        }
+    );
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
