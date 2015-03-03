@@ -71,6 +71,18 @@ $(document).ready(function() {
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table("images/Table.jpg").append(settingsButton()));
+        $("#frame").append(table("images/Table.jpg").append(settingsButton()).resizable({
+            containment: "#frame",
+            grid: 20
+        }));
+    })
+
+       //Third insert
+    $("#insert3").click(function(){
+        //Here we create the stuff we wish to put inside
+        $("#frame").append(table("images/Text.jpg").append(settingsButton()).resizable({
+            containment: "#frame",
+            grid: 20
+        }));
     })
 });
