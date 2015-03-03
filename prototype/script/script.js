@@ -1,5 +1,5 @@
-function table() {
-    return jQuery('<div/>', {}).addClass("container").draggable({
+function table(picture) {
+    container = jQuery('<div/>', {}).addClass("container").draggable({
         containment: "parent",
         drag: function( event, ui ) {
             var snapTolerance = $(this).draggable('option', 'snapTolerance');
@@ -15,6 +15,10 @@ function table() {
             }
         }
     });
+    container.css('background-image', 'url(' + picture + ')');
+    container.css('background-size', '100%', '100%');
+    container.css('background-repeat', 'no-repeat');
+    return container;
 };
 
 function settingsButton() {
@@ -59,7 +63,7 @@ $(document).ready(function() {
     //First insert
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table().append(settingsButton()).resizable({
+        $("#frame").append(table("images/Graph.jpg").append(settingsButton()).resizable({
             containment: "#frame",
             grid: 20
         }));
@@ -67,6 +71,6 @@ $(document).ready(function() {
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
-        $("#frame").append(table().append(settingsButton()));
+        $("#frame").append(table("images/Table.jpg").append(settingsButton()));
     })
 });
