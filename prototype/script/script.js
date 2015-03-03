@@ -96,5 +96,15 @@ $(document).ready(function() {
         $("#frame").append(table("images/Text.jpg"));
 
     })
+
+           //4'th insert
+    $("#insert4").click(function(){
+        //Here we create the stuff we wish to put inside
+        $("#frame").append(table("images/List.jpg").append(settingsButton()).resizable({
+            containment: "#frame",
+            grid: 20
+        }));
+
+    })
 });
 
