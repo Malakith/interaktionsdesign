@@ -14,7 +14,7 @@ function table() {
                 ui.position.left = ui.position.left - leftRemainder;
             }
         }
-    });              // The function returns the product of p1 and p2
+    });
 };
 
 function settingsButton() {
@@ -40,6 +40,11 @@ function options() {
 };
 
 $(document).ready(function() {
+    //Form code:
+    $("#form").submit(function (e) {
+        e.preventDefault();
+        $("#mailInput").toggle(200);
+    });
     //Toolbox button
     $("#showToolbox").click(function() {
             $("#toolbox").toggle(200);
