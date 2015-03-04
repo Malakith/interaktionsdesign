@@ -67,32 +67,23 @@ $(document).ready(function() {
     $("#helper").hide();
     //Toolbox button
     $("#showToolbox").click(function() {
-            if (!$("toolbox").hasClass("active")) {
-                $(".active").slideToggle(200);
-                $(".active").toggleClass("active");
-                $("#toolbox").toggleClass("active");
-                $("#toolbox").slideToggle(200);
-            }
+            $("#showToolbox").closest("li").toggleClass("active");
+            $("#toolbox").slideToggle(200);
+
         }
     );
     //Email button
     $("#showEmailInput").click(function() {
-        if (!$("emailSetup").hasClass("active")) {
-            $(".active").slideToggle(200);
-            $(".active").toggleClass("active");
-            $("#emailSetup").toggleClass("active");
+            $("#showEmailInput").closest("li").toggleClass("active");
             $("#emailSetup").slideToggle(200);
-        }
+
         }
     );
     //helper button
     $("#showHelp").click(function() {
-            if (!$("helper").hasClass("active")) {
-                $(".active").slideToggle(200);
-                $(".active").toggleClass("active");
-                $("#helper").toggleClass("active");
-                $("#helper").slideToggle(200);
-            }
+            $("#showHelp").closest("li").toggleClass("active");
+            $("#helper").slideToggle(200);
+
 
         }
     );

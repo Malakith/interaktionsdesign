@@ -27,6 +27,8 @@
     min-width: 600px;
     background-color: white;
     margin: auto;
+    overflow: visible;
+    z-index: 100;
 }
 
 #menu div {

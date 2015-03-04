@@ -113,6 +113,14 @@ body {
     font-size: 14px;
 }
 
+#submenu li form {
+    display: block;
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 14px;
+    height: 20px;
+}
+
 #submenu li span.warning {
     color: #000000;
     font-size: 12px;
