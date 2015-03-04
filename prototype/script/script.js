@@ -88,7 +88,7 @@ $(document).ready(function() {
         email = $("#emailInput").val();
         $("#icon").attr("src", "images/snabela.png");
         $("#registredEmail").html(email).removeClass("warning");
-        $("#emailOutput").text("Din mail er blevet gemt.");
+        $("#emailOutput").text("Dine indstillinger er blevet gemt.");
         $("#emailOutput").fadeIn();
         setTimeout(function() {
             $("#emailOutput").fadeOut();
@@ -100,7 +100,7 @@ $(document).ready(function() {
         email = "";
         $("#icon").attr("src", "images/info.png");
         $("#registredEmail").html("Email endnu ikke opsat.").addClass("warning");
-        $("#emailOutput").text("Din email er blevet slettet.");
+        $("#emailOutput").text("Dine indstillinger er blevet slettet.");
         $("#emailOutput").fadeIn();
         setTimeout(function() {
             $("#emailOutput").fadeOut();
