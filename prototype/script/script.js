@@ -8,7 +8,7 @@ function widget(picture) {
 }
 
 function createDraggable() {
-    var draggable = jQuery('<div></div>', {}).addClass("draggable").draggable({
+    var draggable = jQuery('<div></div>').addClass("draggable").draggable({
         containment: "#frame",
         drag: function( event, ui ) {
             var snapTolerance = $(this).draggable('option', 'snapTolerance');
