@@ -67,20 +67,33 @@ $(document).ready(function() {
     $("#helper").hide();
     //Toolbox button
     $("#showToolbox").click(function() {
-            $(this).closest("li").toggleClass("active");
-            $("#toolbox").slideToggle(200);
+            if (!$("toolbox").hasClass("active")) {
+                $(".active").slideToggle(200);
+                $(".active").toggleClass("active");
+                $("#toolbox").toggleClass("active");
+                $("#toolbox").slideToggle(200);
+            }
         }
     );
     //Email button
     $("#showEmailInput").click(function() {
-            $(this).closest("li").toggleClass("active");
+        if (!$("emailSetup").hasClass("active")) {
+            $(".active").slideToggle(200);
+            $(".active").toggleClass("active");
+            $("#emailSetup").toggleClass("active");
             $("#emailSetup").slideToggle(200);
+        }
         }
     );
     //helper button
     $("#showHelp").click(function() {
-            $(this).closest("li").toggleClass("active");
-            $("#helper").slideToggle(200);
+            if (!$("helper").hasClass("active")) {
+                $(".active").slideToggle(200);
+                $(".active").toggleClass("active");
+                $("#helper").toggleClass("active");
+                $("#helper").slideToggle(200);
+            }
+
         }
     );
     //Save email
@@ -89,9 +102,9 @@ $(document).ready(function() {
         $("#icon").attr("src", "images/snabela.png");
         $("#registredEmail").html(email).removeClass("warning");
         $("#emailOutput").text("Dine indstillinger er blevet gemt.");
-        $("#emailOutput").fadeIn();
+        $("#emailOutput").animate({ color: "#3a3a3a" }, 200);
         setTimeout(function() {
-            $("#emailOutput").fadeOut();
+            $("#emailOutput").animate({ color: "#ffffff" }, 200);
         }, 2000);
     });
 
@@ -101,9 +114,9 @@ $(document).ready(function() {
         $("#icon").attr("src", "images/info.png");
         $("#registredEmail").html("Email endnu ikke opsat.").addClass("warning");
         $("#emailOutput").text("Dine indstillinger er blevet slettet.");
-        $("#emailOutput").fadeIn();
+        $("#emailOutput").animate({ color: "#3a3a3a" }, 200);
         setTimeout(function() {
-            $("#emailOutput").fadeOut();
+            $("#emailOutput").animate({ color: "#ffffff" }, 200);
         }, 2000);
     });
 
