@@ -78,7 +78,8 @@
     font-size: 16px;
 }
 #menu li span.warning {
-    color: #ee1a17;
+    color: white;
+    font-size: 12px;
 }
 
 

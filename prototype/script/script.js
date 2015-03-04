@@ -82,6 +82,22 @@ $(document).ready(function() {
         $("#icon").attr("src", "images/snabela.png");
         $("#registredEmail").html(email).removeClass("warning");
         $("#emailOutput").text("Din mail er blevet gemt.");
+        $("#emailOutput").fadeIn();
+        setTimeout(function() {
+            $("#emailOutput").fadeOut();
+        }, 2000);
+    });
+
+    //Delete email
+    $("#deleteEmail").click(function() {
+        email = "";
+        $("#icon").attr("src", "images/info.png");
+        $("#registredEmail").html("Email endnu ikke opsat.").addClass("warning");
+        $("#emailOutput").text("Din email er blevet slettet.");
+        $("#emailOutput").fadeIn();
+        setTimeout(function() {
+            $("#emailOutput").fadeOut();
+        }, 2000);
     });
 
     //First insert
