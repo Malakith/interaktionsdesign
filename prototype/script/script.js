@@ -64,18 +64,25 @@ function options() {
 }
 
 $(document).ready(function() {
-
+    $("#helper").hide();
     //Toolbox button
     $("#showToolbox").click(function() {
+            $(this).closest("li").toggleClass("active");
             $("#toolbox").slideToggle(200);
         }
     );
     //Email button
     $("#showEmailInput").click(function() {
+            $(this).closest("li").toggleClass("active");
             $("#emailSetup").slideToggle(200);
         }
     );
-
+    //helper button
+    $("#showHelp").click(function() {
+            $(this).closest("li").toggleClass("active");
+            $("#helper").slideToggle(200);
+        }
+    );
     //Save email
     $("#applyEmailChange").click(function() {
         email = $("#emailInput").val();
