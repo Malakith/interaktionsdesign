@@ -63,39 +63,92 @@ function options() {
     return options;
 }
 
+
+function hideAll() {
+    $(".active").each(function() {
+        $(this).toggleClass("active");
+    });
+    $(".shown").each(function() {
+        $(this).toggleClass("shown");
+        $(this).slideToggle(200);
+
+    });
+};
+
+function clearFrame() {
+    $("#frame").css("background-image", "none");
+    $("#frame").children().each(function() {
+        $(this).remove();
+    });
+}
+
 $(document).ready(function() {
     $("#helper").hide();
     //Toolbox button
     $("#showToolbox").click(function() {
-            $("#showToolbox").closest("li").toggleClass("active");
-            $("#toolbox").slideToggle(200);
-
+            if ($("#toolbox").hasClass("shown")) {
+                hideAll();
+            }
+            else {
+                hideAll();
+                $("#toolbox").toggleClass("shown");
+                $("#toolbox").slideToggle(200);
+                $(this).closest("li").addClass("active");
+            }
         }
     );
     //Email button
     $("#showEmailInput").click(function() {
-            $("#showEmailInput").closest("li").toggleClass("active");
-            $("#emailSetup").slideToggle(200);
+            if ($("#emailSetup").hasClass("shown")) {
+                hideAll();
+
+            }
+            else {
+                hideAll();
+                $("#emailSetup").toggleClass("shown");
+                $("#emailSetup").slideToggle(200);
+                $(this).closest("li").addClass("active");
+            }
+
+        }
+    );
+    //template button
+    $("#showTemplates").click(function() {
+            if ($("#templates").hasClass("shown")) {
+                hideAll();
+            }
+            else {
+                hideAll();
+                $("#templates").toggleClass("shown");
+                $("#templates").slideToggle(200);
+                $(this).closest("li").addClass("active");
+            }
 
         }
     );
     //helper button
     $("#showHelp").click(function() {
-            $("#showHelp").closest("li").toggleClass("active");
-            $("#helper").slideToggle(200);
-
-
+            if ($("#helper").hasClass("shown")) {
+                hideAll();
+            }
+            else {
+                hideAll();
+                $("#helper").toggleClass("shown");
+                $("#helper").slideToggle(200);
+                $(this).closest("li").addClass("active");
+            }
         }
     );
+
     //Save email
     $("#applyEmailChange").click(function() {
         email = $("#emailInput").val();
         $("#icon").attr("src", "images/snabela.png");
         $("#registredEmail").html(email).removeClass("warning");
         $("#emailOutput").text("Dine indstillinger er blevet gemt.");
-        $("#emailOutput").animate({ color: "#3a3a3a" }, 200);
+        $("#emailOutput").show();
         setTimeout(function() {
-            $("#emailOutput").animate({ color: "#ffffff" }, 200);
+            $("#emailOutput").hide();
         }, 2000);
     });
 
@@ -105,9 +158,9 @@ $(document).ready(function() {
         $("#icon").attr("src", "images/info.png");
         $("#registredEmail").html("Email endnu ikke opsat.").addClass("warning");
         $("#emailOutput").text("Dine indstillinger er blevet slettet.");
-        $("#emailOutput").animate({ color: "#3a3a3a" }, 200);
+        $("#emailOutput").show();
         setTimeout(function() {
-            $("#emailOutput").animate({ color: "#ffffff" }, 200);
+            $("#emailOutput").hide();
         }, 2000);
     });
 
@@ -135,6 +188,20 @@ $(document).ready(function() {
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/List.jpg"));
 
+    });
+    $("#clearFrame").click(function(){
+        //Here we create the stuff we wish to put inside
+        clearFrame();
+    });
+
+    $("#template1").click(function() {
+        clearFrame();
+        $("#frame").css("background-image", "url(images/template1.jpg)");
+    });
+
+    $("#template2").click(function() {
+        clearFrame();
+        $("#frame").css("background-image", "url(images/template2.jpg)");
     });
 });
 
