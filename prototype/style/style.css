@@ -68,6 +68,20 @@
     width: auto;
 }
 
+#message {
+    width: 80%;
+    max-width: 900px;
+    min-width: 600px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: auto;
+    background-color: #FFFF66;
+    color: black;
+    text-align: center;
+}
+
 #frame {
     width: 80%;
     max-width: 900px;
