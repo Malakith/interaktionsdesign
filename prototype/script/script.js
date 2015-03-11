@@ -57,7 +57,7 @@ function options() {
     $(this).width(container.width());
     closeButton.click(function(){
         $(this).closest(".draggable").hide(200);
-
+        saveChanges();
     });
     options.append(closeButton);
     return options;
