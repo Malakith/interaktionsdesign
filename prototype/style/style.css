@@ -78,6 +78,7 @@
     background-color: white;
     position: relative;
     overflow: auto;
+    background-repeat: no-repeat;
 }
 
 
