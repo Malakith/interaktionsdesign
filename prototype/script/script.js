@@ -84,6 +84,7 @@ function clearFrame() {
 
 $(document).ready(function() {
     $("#helper").hide();
+    $("#changeOutput").hide();
     //Toolbox button
     $("#showToolbox").click(function() {
             if ($("#toolbox").hasClass("shown")) {
@@ -168,18 +169,30 @@ $(document).ready(function() {
     $("#insert1").click(function(){
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/Graph.jpg"));
+        $("#changeOutput").show();
+        setTimeout(function() {
+            $("#changeOutput").hide();
+        }, 2000);
 
     });
     //Second insert
     $("#insert2").click(function(){
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/Table.jpg"));
+        $("#changeOutput").show();
+        setTimeout(function() {
+            $("#changeOutput").hide();
+        }, 2000);
     });
 
        //Third insert
     $("#insert3").click(function(){
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/Text.jpg"));
+        $("#changeOutput").show();
+        setTimeout(function() {
+            $("#changeOutput").hide();
+        }, 2000);
 
     });
 
@@ -187,6 +200,10 @@ $(document).ready(function() {
     $("#insert4").click(function(){
         //Here we create the stuff we wish to put inside
         $("#frame").append(widget("images/List.jpg"));
+        $("#changeOutput").show();
+        setTimeout(function() {
+            $("#changeOutput").hide();
+        }, 2000);
 
     });
     $("#clearFrame").click(function(){
@@ -203,5 +220,7 @@ $(document).ready(function() {
         clearFrame();
         $("#frame").css("background-image", "url(images/template2.jpg)");
     });
+
 });
+
 
