@@ -79,6 +79,10 @@
     position: relative;
     overflow: auto;
     background-repeat: no-repeat;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
 }
 
 
